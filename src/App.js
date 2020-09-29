@@ -35,11 +35,16 @@ class App extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.addNewTask()
   }; 
   handleInputChange = (e) => this.setState({
     message:e.target.value
   });
+
+  handleTaskClick = (e) => {
+    console.log(e.target.innerHTML)
+    // this.toggleDone(itemId);
+  };
+
 
   addNewTask = () => {
     const currentList = this.state.todoList;
@@ -52,8 +57,23 @@ class App extends React.Component {
     this.setState({todoList:currentList});
   };
 
+  toggleDone = (taskId) => {
+    console.log("taskId: ", taskId)
+    //e.target.innerHTML gets item.name
 
-  // clickToggleDone = (e) => e.target.addClass("red");
+    // need to find the todo item with the same name
+    // and change its done to true
+
+    //map over array
+    //when we find item clicked, toggle done
+    //otherwise return the item as is
+
+    // this.setState({
+
+    // })
+
+  };  
+
 
   render(){
 
@@ -64,6 +84,7 @@ class App extends React.Component {
           <TodoList 
             todoList={this.state.todoList}
             keyGen={this.keyGen}
+            handleTaskClick={this.handleTaskClick}
           
           />
 
@@ -72,6 +93,7 @@ class App extends React.Component {
           <TodoForm 
             handleInputChange={this.handleInputChange}
             handleSubmit={this.handleSubmit}
+            addNewTask={this.addNewTask}
           />
 
       </div>

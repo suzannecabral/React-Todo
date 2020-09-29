@@ -3,8 +3,8 @@ li {
 }
 
 .notDone{
-    background-color:salmon;
+    text-decoration:none;    
 }
 .done {
-    background-color:lightgreen;
+    text-decoration:line-through;
 } 

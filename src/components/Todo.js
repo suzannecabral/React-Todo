@@ -2,11 +2,13 @@ import React from "react";
 
 
 class Todo extends React.Component {
+
+
     render() {
-        const { keyGen, item }=this.props
+        const { keyGen, item, handleTaskClick }=this.props
 
         return(
-            <li key={keyGen()}>{item.name}</li>
+            <li key={keyGen()} className={item.done ? 'done' : 'notDone'}>{item.name}</li>
         );
     }
 }

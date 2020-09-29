@@ -1,9 +1,14 @@
 import React from "react";
 import Todo from "./Todo";
 
+
+
 class TodoList extends React.Component {
+
+
+
     render() {
-        const { todoList, keyGen } = this.props
+        const { todoList, keyGen, handleTaskClick } = this.props
         return(
             
         <ul>
@@ -11,8 +16,10 @@ class TodoList extends React.Component {
 
             return(
                 <Todo 
+                    key={keyGen()}
                     keyGen={keyGen}
                     item={item}
+                    handleTaskClick={handleTaskClick}
                 />
             ); 
 
