@@ -1,4 +1,5 @@
 import React from "react";
+import Todo from "./Todo";
 
 class TodoList extends React.Component {
     render() {
@@ -8,7 +9,12 @@ class TodoList extends React.Component {
         <ul>
             {todoList.map((item)=>{
 
-            return <li key={keyGen()}>{item.name}</li>
+            return(
+                <Todo 
+                    keyGen={keyGen}
+                    item={item}
+                />
+            ); 
 
             })}
         </ul>

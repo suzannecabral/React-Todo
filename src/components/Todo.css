@@ -1,8 +1,10 @@
 li {
-    background-color:cyan;
     width:25rem;
 }
 
+.notDone{
+    background-color:salmon;
+}
 .done {
-    background-color:green;
+    background-color:lightgreen;
 } 
