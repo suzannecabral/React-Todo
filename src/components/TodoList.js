@@ -8,7 +8,7 @@ class TodoList extends React.Component {
 
 
     render() {
-        const { todoList, keyGen, handleTaskClick } = this.props
+        const { todoList, keyGen, toggleDone } = this.props
         return(
             
         <ul>
@@ -19,7 +19,7 @@ class TodoList extends React.Component {
                     key={keyGen()}
                     keyGen={keyGen}
                     item={item}
-                    handleTaskClick={handleTaskClick}
+                    toggleDone={toggleDone}
                 />
             ); 
 

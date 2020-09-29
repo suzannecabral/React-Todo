@@ -5,10 +5,17 @@ class Todo extends React.Component {
 
 
     render() {
-        const { keyGen, item, handleTaskClick }=this.props
+        const { keyGen, item, toggleDone }=this.props
 
         return(
-            <li key={keyGen()} className={item.done ? 'done' : 'notDone'}>{item.name}</li>
+            <li 
+                key={keyGen()} 
+                className={item.done ? 'done' : 'notDone'} 
+                onClick={() => {
+                toggleDone(item.id)
+            }}>
+                {item.name}
+            </li>
         );
     }
 }

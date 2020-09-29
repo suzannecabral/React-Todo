@@ -40,8 +40,9 @@ class App extends React.Component {
     message:e.target.value
   });
 
-  handleTaskClick = (e) => {
+  handleTaskClick = (e, itemId) => {
     console.log(e.target.innerHTML)
+    // this.toggleDone(e, this)
     // this.toggleDone(itemId);
   };
 
@@ -59,7 +60,10 @@ class App extends React.Component {
 
   toggleDone = (taskId) => {
     console.log("taskId: ", taskId)
+
     //e.target.innerHTML gets item.name
+    // or just pass in item.name
+
 
     // need to find the todo item with the same name
     // and change its done to true
@@ -68,9 +72,17 @@ class App extends React.Component {
     //when we find item clicked, toggle done
     //otherwise return the item as is
 
-    // this.setState({
-
-    // })
+    this.setState({
+      todoList: this.state.todoList.map((task) => {
+        if (taskId === task.id) {
+          return {
+            ...task,
+            done: !task.done
+          };
+        }
+        return task;
+      })
+    });
 
   };  
 
@@ -84,7 +96,7 @@ class App extends React.Component {
           <TodoList 
             todoList={this.state.todoList}
             keyGen={this.keyGen}
-            handleTaskClick={this.handleTaskClick}
+            toggleDone={this.toggleDone}
           
           />
 
