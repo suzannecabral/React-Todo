@@ -9,6 +9,7 @@ const TodoForm = (props) => {
           <form onSubmit={handleSubmit}>
             <input type="text" placeholder="New Task" onChange={handleInputChange} />
             <button type="submit">Add</button>
+            <button>Clear Complete</button>
           </form>
         </div>
     );

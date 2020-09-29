@@ -12,9 +12,18 @@ class App extends React.Component {
     this.state={
       message:"",
       todoList:[
-        "apple",
-        "orange",
-        "banana",
+        {
+          name:"apple",
+          done:false,
+        },
+        {
+          name:"orange",
+          done:true,
+        },
+        {
+          name:"banana",
+          done:false,
+        },
       ]
     }
 

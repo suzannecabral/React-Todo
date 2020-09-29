@@ -7,7 +7,8 @@ const TodoList = (props) => {
     return (
         <ul>
             {todoList.map((item)=>{
-            return <li key={keyGen()}>{item}</li>
+
+            return <li key={keyGen()}>{item.name}</li>
             })}
         </ul>
     );
