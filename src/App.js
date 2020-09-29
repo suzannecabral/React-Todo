@@ -33,10 +33,26 @@ class App extends React.Component {
   // keyGen = () => Date.now();
   keyGen = () => shortid.generate();
 
-  handleSubmit = (e) => e.preventDefault(); 
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.addNewTask()
+  }; 
   handleInputChange = (e) => this.setState({
     message:e.target.value
   });
+
+  addNewTask = () => {
+    const currentList = this.state.todoList;
+    const newTask={
+      name:this.state.message,
+      done:false,
+      id:this.keyGen(),
+    }
+    currentList.push(newTask);
+    this.setState({todoList:currentList});
+  };
+
+
   // clickToggleDone = (e) => e.target.addClass("red");
 
   render(){
