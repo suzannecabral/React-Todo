@@ -1,41 +1,46 @@
 import React from 'react';
 import TodoForm from './components/TodoForm'
 import TodoList from './components/TodoList'
+import shortid from "shortid";
 
 import "./components/Todo.css";
 
 
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this.state={
+
+    state={
       message:"",
       todoList:[
         {
           name:"apple",
           done:false,
+          id:"D65QcYQAG",
         },
         {
           name:"orange",
           done:true,
+          id:"csID-hJUsM",
         },
         {
           name:"banana",
           done:false,
+          id:"IJWSq2Q101",
         },
       ]
     }
 
+  // keyGen = () => Date.now();
+  keyGen = () => shortid.generate();
 
-  }
-
-  keyGen = () => Date.now();
   handleSubmit = (e) => e.preventDefault(); 
-  handleInputChange = (e) => this.setState({message:e.target.value});
+  handleInputChange = (e) => this.setState({
+    message:e.target.value
+  });
   // clickToggleDone = (e) => e.target.addClass("red");
 
   render(){
+
     return(
       <div>
         <h2>Todo List</h2>
