@@ -24,6 +24,7 @@ class App extends React.Component {
     message:e.target.value
   });
 
+
   addNewTask = () => {
     const currentList = this.state.todoList;
     const newTask={
@@ -95,8 +96,6 @@ class App extends React.Component {
             toggleDone={this.toggleDone}
           
           />
-
-          <h4>{this.state.message}</h4>
 
           <TodoForm 
             handleInputChange={this.handleInputChange}
