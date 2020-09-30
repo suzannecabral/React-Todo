@@ -1,0 +1,10 @@
+li {
+    width:25rem;
+}
+
+.notDone{
+    text-decoration:none;    
+}
+.done {
+    text-decoration:line-through;
+} 
