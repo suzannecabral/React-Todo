@@ -7,7 +7,7 @@ class TodoForm extends React.Component{
     return(
       <div>
         <form onSubmit={handleSubmit}>
-          <input type="text" placeholder="New Task" onChange={handleInputChange} />
+          <input id="taskInput" type="text" placeholder="New Task" onChange={handleInputChange} />
           <button type="submit" onClick={addNewTask}>Add</button>
           <button type="submit" onClick={clearComplete}>Clear Complete</button>
         </form>

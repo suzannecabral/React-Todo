@@ -19,6 +19,7 @@ class App extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    document.getElementById("taskInput").value="";
   }; 
   handleInputChange = (e) => this.setState({
     message:e.target.value
@@ -83,6 +84,8 @@ class App extends React.Component {
     // console.log(openTasks)
     this.setState({todoList:openTasks});
   }
+
+
 
   render(){
 
