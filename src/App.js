@@ -11,23 +11,7 @@ class App extends React.Component {
 
     state={
       message:"",
-      todoList:[
-        {
-          name:"apple",
-          done:false,
-          id:"D65QcYQAG",
-        },
-        {
-          name:"orange",
-          done:true,
-          id:"csID-hJUsM",
-        },
-        {
-          name:"banana",
-          done:false,
-          id:"IJWSq2Q101",
-        },
-      ]
+      todoList:[]
     }
 
   // keyGen = () => Date.now();
@@ -39,13 +23,6 @@ class App extends React.Component {
   handleInputChange = (e) => this.setState({
     message:e.target.value
   });
-
-  handleTaskClick = (e, itemId) => {
-    console.log(e.target.innerHTML)
-    // this.toggleDone(e, this)
-    // this.toggleDone(itemId);
-  };
-
 
   addNewTask = () => {
     const currentList = this.state.todoList;
@@ -59,13 +36,7 @@ class App extends React.Component {
   };
 
   toggleDone = (taskId) => {
-    console.log("taskId: ", taskId)
-
-    //e.target.innerHTML gets item.name
-    // or just pass in item.name
-
-
-    // need to find the todo item with the same name
+    // need to find the todo item with the same id (not name)
     // and change its done to true
 
     //map over array
@@ -86,6 +57,31 @@ class App extends React.Component {
 
   };  
 
+  // filterComplete = () => {
+  //   const openTasks = this.state.todoList.filter(function (task) {
+  //     if (task.done === false) {
+  //       return task;
+  //     } else return null;
+  //   });
+  //   console.log(openTasks)
+  // }
+
+  // clearComplete = () => {
+  //   let openTasks=this.filterComplete();
+  //   console.log(openTasks);
+  //   // this.setState=({todoList:openTasks});
+  // }
+
+
+  clearComplete = () => {
+    const openTasks = this.state.todoList.filter(function (task) {
+      if (task.done === false) {
+        return task;
+      } else return null;
+    });
+    // console.log(openTasks)
+    this.setState({todoList:openTasks});
+  }
 
   render(){
 
@@ -106,6 +102,7 @@ class App extends React.Component {
             handleInputChange={this.handleInputChange}
             handleSubmit={this.handleSubmit}
             addNewTask={this.addNewTask}
+            clearComplete={this.clearComplete}
           />
 
       </div>

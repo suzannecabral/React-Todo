@@ -2,14 +2,14 @@ import React from "react";
 
 class TodoForm extends React.Component{ 
   render (){
-    const { handleSubmit, handleInputChange, addNewTask } = this.props;
+    const { handleSubmit, handleInputChange, addNewTask, clearComplete } = this.props;
 
     return(
       <div>
         <form onSubmit={handleSubmit}>
           <input type="text" placeholder="New Task" onChange={handleInputChange} />
           <button type="submit" onClick={addNewTask}>Add</button>
-          <button type="submit">Clear Complete</button>
+          <button type="submit" onClick={clearComplete}>Clear Complete</button>
         </form>
       </div>
 
